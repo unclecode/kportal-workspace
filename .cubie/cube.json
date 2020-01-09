@@ -8,6 +8,20 @@
         "location": "Malaysia"
     },
     "cubes": {
-        "javascript": {}
-    }
+        "javascript": {
+            "currentLesson": "topic1/lesson1",
+            "currentScenario": {
+                "current": [
+                    "main#easy#1.values/1.literals",
+                    "main#easy#1.values/2.memory",
+                    "main#easy#2.variables/1.datatypes",
+                    "main#easy#2.variables/2.declaration",
+                    "main#easy#3.expressions/1.arithmatic",
+                    "main#easy#3.expressions/2.logical"
+                ]
+            }
+        }
+    },
+    "currentCube": "javascript",
+    "currentType": "cubes"
 }
