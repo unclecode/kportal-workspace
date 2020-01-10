@@ -1,3 +1,25 @@
 body {
     font-family: 'Karla', sans-serif;
 }
+
+
+div.user {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    grid-gap: 1rem;
+}
+
+div.user .info {
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-gap: 0.5rem;
+}
+div.user .info h3 { margin: 0; }
+div.user .info small {
+    color: #999
+}
+
+div.user img {
+    width: 48px;
+}

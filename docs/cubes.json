@@ -1,19 +1,33 @@
 {
-    "javascript": {
-        "user": {
-            "id": "kido0000",
-            "name": "UncleCode",
-            "username": "unclecode",
-            "avatar": "https://avatars0.githubusercontent.com/u/12494079?v=4",
-            "email": "unclecode@kidocode.com",
-            "location": "Malaysia"
-        },
-        "time": 1578563432997,
-        "complete": 0,
-        "modified": 0,
-        "level": "moderate",
-        "adaptives": [
-            "moderate"
-        ]
-    }
+    "user": {
+        "id": "kido0000",
+        "name": "UncleCode",
+        "username": "unclecode",
+        "avatar": "https://avatars0.githubusercontent.com/u/12494079?v=4",
+        "email": "unclecode@kidocode.com",
+        "location": "Malaysia",
+        "time": 1578563462289
+    },
+    "cubes": {
+        "javascript": {
+            "time": 1578563462289,
+            "complete": 0,
+            "modified": 0,
+            "current": {
+                "lesson": "1.values/2.memory",
+                "scenario": "main#easy"
+            },
+            "url": "https://raw.githubusercontent.com/unclecode/unclecode-javascript-cube/master/javascript.cube.json",
+            "result": {
+                "1.values/1.literal": {
+                    "test": "passed"
+                },
+                "1.values/2.memory": {
+                    "test": "pending"
+                }
+            }
+        }
+    },
+    "currentCube": "javascript",
+    "currentType": "cubes"
 }
