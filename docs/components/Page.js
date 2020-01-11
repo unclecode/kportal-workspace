@@ -6,8 +6,21 @@ function MakePage() {
         constructor() {
             this.user = null;
             this.cubes = {};
+            this.branches = []
 
-            
+            window.addEventListener("cube_clicked", e => {
+                const cube = this.cubes[e.detail];
+                this.branches = []
+                for (let [key, value] of Object.entries(this.cubes[cube.name].result)) {
+                    let b = new Branch(key, value)
+                    // debugger
+                    this.branches.push(b)
+                    document.querySelector("#cubeDetails").appendChild(b.render())
+                }
+                // render them in the right and if click get their "resultUrl" and fetch json n show
+            })
+
+
         }
         async start() {
             let cubeData = await fetch("./cubes.json?123")
@@ -19,6 +32,7 @@ function MakePage() {
 
             this.user = await new UserView(cubeData.user)
             this.render()
+            window.dispatchEvent(new CustomEvent("cube_clicked", { detail: "javascript"}))
             return this.cubes
         }
         render() {
