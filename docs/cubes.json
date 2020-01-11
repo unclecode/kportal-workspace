@@ -12,7 +12,7 @@
         "javascript": {
             "time": 1578563462289,
             "complete": 0,
-            "modified": 0,
+            "modified": 1578563462289,
             "current": {
                 "lesson": "1.values/2.memory",
                 "scenario": "main#easy"
@@ -20,7 +20,8 @@
             "url": "https://raw.githubusercontent.com/unclecode/unclecode-javascript-cube/master/javascript.cube.json",
             "result": {
                 "1.values/1.literal": {
-                    "test": "passed"
+                    "test": "passed",
+                    "resultUrl":""
                 },
                 "1.values/2.memory": {
                     "test": "pending"

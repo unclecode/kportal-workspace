@@ -10,97 +10,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <h1>🤓 Kportal C-Hub Page</h1>
-    <div id="user"></div>
-
-    <script>
-
-        class UserView {
-            constructor(user) {
-                let { id, avatar, email, location, name, username, time } = { ...user }
-                this.id = id
-                this.avatar = avatar
-                this.email = email
-                this.location = location
-                this.name = name
-                this.username = username
-                this.time = time
-                //Object.assign(this, user)
-            }
-            render(el){
-                this.el = el
-                const html = 
-`<div class = "user">
-    <img src = "${this.avatar}" />
-    <div class = "info">
-        <h3>${this.username}</h3>
-        <small>${(new Date(this.time)).toDateString()}</small>
+<body class="dark">
+    <div id="wrapper">
+        <header>
+            <h1>🤓 Kportal Workspace</h1>
+            <div id="user"></div>
+        </header>
+        <main>
+            <div id="cubes"></div>
+            <div id="cubeDetails"></div>
+        </main>
+        <footer>footer</footer>
     </div>
-</div>`
-                el.innerHTML = html
-                this.el.ui = {
-                    time: el.querySelector(".info small")
-                }
-            }
-            update(time){
-                this.el.ui.time.innerHTML = time
-            }
-        }
-
-        class CubeView {
-            constructor(name, cube) {
-                this.name = name
-                this.time = cube.time
-                this.complete = cube.complete
-                this.current = cube.current
-                this.result = cube.result
-                this.url = cube.url
-            }
-            render(el){
-                this.el = el;
-                const html = 
-`<div class = "cube">
-    <img src = "${this.avatar}" />
-    <div class = "info">
-        <h3>${this.username}</h3>
-        <small>${(new Date(this.time)).toDateString()}</small>
-    </div>
-</div>`
-            }
-        }
-
-        const Page = new (class Page {
-            constructor() {
-                this.user = null;
-                this.cubes = {};
-            }
-            async start() {
-                let cubeData = await fetch("./cubes.json?123")
-                cubeData = await cubeData.json()
-
-                for (let [key, value] of Object.entries(cubeData.cubes)) {
-                    this.cubes[key] = new CubeView(key, value)
-                }
-
-                this.user = await new UserView(cubeData.user)
-                return this.cubes
-            }
-            hi() {
-                console.log('hi')
-            }
-        })
-
-        Page.start()
-            .then(cube => {
-                //console.log(cube)
-                Page.user.render(document.querySelector("#user"))
-            })
-
-
-
-    </script>
-
+    <script src="./components/User.js"></script>
+    <script src="./components/Cube.js"></script>
+    <script src="./components/Page.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>
