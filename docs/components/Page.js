@@ -11,8 +11,8 @@ function MakePage() {
             window.addEventListener("cube_clicked", e => {
                 const cube = this.cubes[e.detail];
                 this.branches = []
-                for (let [key, value] of Object.entries(this.cubes[cube.name].result)) {
-                    let b = new Branch(key, value)
+                for (let [topic, lessons] of Object.entries(this.cubes[cube.name].result)) {
+                    let b = new Branch(topic, lessons)
                     // debugger
                     this.branches.push(b)
                     document.querySelector("#cubeDetails").appendChild(b.render())
@@ -25,10 +25,13 @@ function MakePage() {
         async start() {
             let cubeData = await fetch("./cubes.json?123")
             cubeData = await cubeData.json()
-
+            this.points = 0
             for (let [key, value] of Object.entries(cubeData.cubes)) {
                 this.cubes[key] = new CubeView(key, value)
+                this.points += this.cubes[key].progress.points
             }
+
+            cubeData.user.points = this.points
 
             this.user = await new UserView(cubeData.user)
             this.render()

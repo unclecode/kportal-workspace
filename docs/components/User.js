@@ -1,6 +1,6 @@
 class UserView {
     constructor(user) {
-        let { id, avatar, email, location, name, username, time } = { ...user }
+        let { id, avatar, email, location, name, username, time, points } = { ...user }
         this.id = id
         this.avatar = avatar
         this.email = email
@@ -8,16 +8,17 @@ class UserView {
         this.name = name
         this.username = username
         this.time = time
+        this.points = points
         //Object.assign(this, user)
     }
     render() {
 
         const html =
             `<div class = "user">
-<img src = "${this.avatar}" />
+<img src = "${this.avatar}" alt = "Joined at ${(new Date(this.time)).toDateString()}" />
 <div class = "info">
 <h3>${this.username}</h3>
-<small>${(new Date(this.time)).toDateString()}</small>
+<span class = "points">⦿ ${this.points}</span>
 </div>
 </div>`
         var wrapper = document.createElement('div');

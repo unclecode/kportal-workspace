@@ -19,23 +19,27 @@
             },
             "url": "https://raw.githubusercontent.com/unclecode/unclecode-javascript-cube/master/javascript.cube.json",
             "result": {
-                "1.values/1.literal": {
-                    "test": {
-                        "status": "passed",
-                        "total": 5,
-                        "failed": 0,
-                        "passed": 5
+                "1.values": {
+                    "1.literal": {
+                        "test": {
+                            "status": "passed",
+                            "total": 5,
+                            "failed": 0,
+                            "passed": 5
+                        },
+                        "points": 5000,
+                        "resultUrl": ""
                     },
-                    "resultUrl": ""
-                },
-                "1.values/2.memory": {
-                    "test": {
-                        "status": "failed",
-                        "total": 5,
-                        "failed": 5,
-                        "passed": 0
-                    },
-                    "resultUrl": ""
+                    "2.memory": {
+                        "test": {
+                            "status": "failed",
+                            "total": 5,
+                            "failed": 5,
+                            "passed": 0
+                        },
+                        "points": 0,
+                        "resultUrl": ""
+                    }
                 }
             }
         }

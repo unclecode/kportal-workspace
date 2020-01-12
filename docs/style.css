@@ -3,6 +3,7 @@
     --blue-dark-theme: #2db2f1;
     --grey-dark: #1D1E20;
     --accent: #ff8229;
+    --points: #ffda23;
 }
 
 body {
@@ -77,7 +78,13 @@ div.user {
 div.user .info {
     display: grid;
     grid-template-rows: min-content min-content;
-    grid-gap: 0.2ßrem;
+    
+}
+div.user .info h3 {
+    text-transform: capitalize;;
+}
+div.user .info .points{
+    color: var(--points);
 }
 div.user .info small, div.cube .info {
     color: #999
@@ -129,16 +136,31 @@ div#cubeDetails {
 }
 
 .branch {
+
+}
+.branch .header:hover {
+    background-color: var(--grey-dark);
+}
+
+.branch .header, .branch .lessons .lesson{
     display: grid;
     grid-auto-flow: column;
     justify-content: start;
     align-items: center;
     grid-gap: 0.3rem;
     padding: 0rem 1rem;
-    grid-template-columns: max-content 1fr max-content max-content max-content;
+    grid-template-columns: max-content 1fr 40px 40px 60px 60px;
+    justify-items: end;
 }
-.branch:hover {
-    background-color: var(--grey-dark);
+.branch .key {
+    justify-self: start;
+}
+.branch .lessons{
+    padding: 0rem 1rem;
+}
+.branch .lessons .lesson{
+    padding-right: 0;
+    font-size: 0.8rem;
 }
 
 
@@ -158,6 +180,10 @@ footer{
 
 .text-danger {
     color: #E34C26
+}
+
+.text-warning  {
+    color: var(--points)
 }
 
 body.dark .text-info {
